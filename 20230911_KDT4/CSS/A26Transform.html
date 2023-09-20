@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A26 Transform</title>
+    <style type="text/css">
+      body { color: gray; line-height: 1.5em; }
+			h1, h2, h3, h4, h5, h6 { font-size:1.5em; }
+      #content { width: 1000px; margin: 20px auto;}
+
+      .box { position: relative; width: 70px; height: 70px; background: orange; text-align: center; line-height: 4.5em; float: left; margin: 0 30px 30px 0; }
+      .clear { clear: both; }
+
+      .move:hover { color: white; transform: translate(20px, 20px);}
+      .scale:hover { color: white; transform: scale(120%, 150%);}
+      .rotate:hover { color: white; transform: rotate(270deg);}
+      .skew:hover { color: white; transform: skew(20deg, 20deg);}
+      .combine:hover { color: white; transform: rotate(270deg) scale(130%)}
+
+      .size { 
+        color: white; 
+        transition-property: width, height, line-height;
+        transition-duration: 1s, 2s, 1s;
+      }
+      .size:hover {
+        width: 120px;
+        height: 120px;
+        line-height: 7em;
+      }
+
+      .rotateAll { color: white; transition: all 2s ease 0.5s;}
+      .rotateAll:hover { width: 200px; height: 200px;  transform: rotate(270deg);}
+
+      .ease { color: white; transition: 2s ease-out; }
+      .ease:hover { height: 500px; }
+
+      .delay { color: white; transition: 2s ease-out 1s; }
+      .delay:hover { height: 500px; }
+
+      .list { list-style: none; padding: 0; }
+      .list::after { content: ''; display: block; clear: both; }
+      .list li { 
+        background-color: red;
+        float: left; 
+        margin-right: 10px; 
+        position: relative;
+        overflow: hidden;
+
+      }
+
+      .list li img { margin: 0; padding: 0; float: left; }
+      .list li div { 
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        text-align: center;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+
+        opacity: 0; /* 투명도가 0 => 화면에 안보임 */
+        top: 200px;
+        transition: 1s ease-in-out;
+      }
+      .list li:hover div {
+        opacity: 1;
+        transform: translateY(-200px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <h1>회사 로고</h1>
+      </header>
+
+      <main>
+        <section>
+          <h1>Transform</h1>
+
+          <div class="box move">ONE</div>
+          <div class="box scale">TWO</div>
+          <div class="box rotate">THREE</div>
+          <div class="box skew">FOUR</div>
+          <div class="box combine">FIVE</div>
+        </section>
+       
+        <section class="clear">
+          <h1>Transtion</h1>
+
+          <div class="box size">ONE</div>
+          <div class="box rotateAll">TWO</div>
+          <div class="box ease">THREE</div>
+          <div class="box delay">FOUR</div>
+          <div class="box">FIVE</div>
+        </section>
+        
+        <section class="clear">
+          <h1>상품 소개</h1>
+         
+          <ul class="list">
+            <li>
+              <img src="images/11/prod1.jpg" alt="상품 1">
+              <div>
+                <h2>상품 1</h2>
+                <p>상품 1 설명 텍스트</p>
+                <p>가격 : 12,000원</p>
+              </div>
+            </li>
+
+            <li>
+              <img src="images/11/prod2.jpg" alt="상품 2">
+              <div>
+                <h2>상품 2</h2>
+                <p>상품 2 설명 텍스트</p>
+                <p>가격 : 22,000원</p>
+              </div>
+            </li>
+
+            <li>
+              <img src="images/11/prod3.jpg" alt="상품 3">
+              <div>
+                <h2>상품 3</h2>
+                <p>상품 3 설명 텍스트</p>
+                <p>가격 : 32,000원</p>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>푸터</p>
+      </footer>
+    </div>
+  </body>
+</html>

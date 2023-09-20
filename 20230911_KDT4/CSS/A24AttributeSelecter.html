@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A24 속성 선택자</title>
+    <style type="text/css">
+      body { color: gray; line-height: 1.5em; }
+			h1, h2, h3, h4, h5, h6 { font-size:1.5em; }
+
+      #content { width: 1000px; margin: 20px auto;}
+
+      fieldset { border: none; margin: 0; padding: 0; }
+      fieldset > legend { display: none; }
+
+      ul { list-style: none; padding: 0; }
+      ul li { 
+        padding: 10px; 
+      }
+
+      #myForm input[type="text"], #myForm input[type="password"] {
+        width: 100%;
+        border: 0;    /* 테두리를 삭제 */
+        border-bottom: 1px solid gray;
+        padding: 10px;
+        outline: 0;   /* 마우스 커서가 위치 했을때(focus)의 border */
+        font-size: 1em;
+        color: orange;
+      }
+
+      #myForm input[type="password"] {
+        color: green;
+      }
+      #myForm input[autofocus] { background: lightgray; }
+
+      /* 가상 선택자 */
+      /* #myForm input:read-only { background: lightgray; } */
+      #myForm input[readonly] { background: lightgray; }
+
+      /* 완벽 매칭 */
+      /* #content section > a { color: green; } => 모두 적용 */
+      a[href="https://google.com"] { color: green; }
+
+      /* 시작 일치 - 먼저 시작 단어는 매칭되어야 한다 */
+      a[href ^= "http://"] { color: orange; text-decoration: none;}
+
+      /* 종료 일치 */
+      a[href $= ".net"] { font-weight: bold; font-size: 20pt; }
+
+      /* 포함 */
+      a[title *= "정보"] { color: red; }
+
+      /* 포함 -> 포함에는 지정한 "단어"와 지정한 "단어-"도 포함한다 */
+      a[data-language |= "en"] { color: orange; text-decoration: none;}
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <h1>회사 로고</h1>
+      </header>
+
+      <form id="myForm">
+        <fieldset>
+          <legend>로그인</legend>
+          <ul>
+            <li>
+              <label for="id">아이디</label>
+              <input type="text" name="id" id="id" autofocus>
+            </li>
+            <li>
+              <label for="password">비밀번호</label>
+              <input type="password" name="password" id="password">
+            </li>
+            <li>
+              <label for="name">이름</label>
+              <input type="text" name="name" id="name" value="홍길동" readonly>
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+
+      <main id="content">
+        <section>
+          <a href="https://google.com">구글</a> <br />
+          <a href="http://naver.com">네이버</a><br />
+          <a href="http://daum.net">다음</a><br/>
+
+          <hr />
+
+          <a src="#" title="날씨 정보">날씨</a><br />
+          <a src="#" title="오늘 날씨는 흐리고 바람이 강하게 불겠습니다.">날씨</a><br />
+
+          <hr />
+
+          <a href="#" data-language="en" id="abc">en</a><br />
+          <a href="#" data-language="en-US">en-US</a><br />
+          <a href="#" data-language="english">english</a><br />
+        </section>
+      </main>
+
+      <footer>
+        <p>푸터</p>
+      </footer>
+    </div>
+
+    <script>
+      document.querySelector('header > h1').style.color = 'orange';
+      document.querySelector('a[data-language]').addEventListener('click', function(evt){
+        alert(evt.target.dataset.language);
+      })
+    </script>
+  </body>
+</html>

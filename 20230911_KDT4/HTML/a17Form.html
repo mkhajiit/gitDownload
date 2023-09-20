@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A17 Input</title>
+</head>
+<body>
+  <h1>A17 Input</h1>
+
+  <!-- novalidate => required, email 값 체크, url 값 체크 등을 모두 무시 -->
+  <form method="GET" action="" novalidate>
+
+    <fieldset>
+      <legend>로그인 정보</legend>
+      
+      <!--
+        size => 이 필드 크기는 20자가 한번에 다 표시될 만한 크기로 지정
+        maxlength => size(크기)와 상관없이 이 필드에 입력할 수 있는 총 문자 수
+        placeholder => 필드에 흐린 텍스트로 미리 보여줄 값. 포커스를 두면 문자는 사라진다
+        value => 사용자의 입력값을 먼저 기술해서 표시해 놓을 목적(전송되는 실질적인 값)
+      -->
+      <label for="id1">아이디: </label>
+      <input type="text" id="id1" name="id" size="50" maxlength="20"><br>
+      
+      <label for="pw">패스워드: </label>
+      <input type="password" id="pw" name="password" size="50">
+    </fieldset>
+
+    <fieldset>
+      <legend>폼 요소 정리</legend>
+      <table style="width: 100%;" border="0">
+        <colgroup>
+          <col style="background: lightgray; width: 150px;">
+          <col>
+        </colgroup>
+        <tr>
+          <td><label for="name">이름: </label></td>
+          <td><input type="text" id="name" name="name" size="70" autofocus required
+            placeholder="이름을 입력해 주세요"></td>
+        </tr>
+        <tr>
+          <td><label for="address">주소: </label></td>
+          <td><input type="text" id="address" name="address" size="100" required></td>
+        </tr>
+        <tr>
+          <td><label for="tel">전화번호: </label></td>
+          <!-- 
+            readonly => value 값을 변경할 수 없다 
+            서버에 name=value 형태로 값이 전달된다
+          -->
+          <td><input type="tel" id="tel" name="tel" value="010-1234-5678" readonly></td>
+        </tr>
+        <tr>
+          <td><label for="email">이메일: </label></td>
+          <!-- 
+            disabled => 사용할 수 없는 필드. 필드 자체가 회색으로 변경되면서 사용할 수 없게 된다
+            서버에 이 필드에 대한 정보가 넘어가지 않는다
+          -->
+          <td><input type="email" id="email" name="email" size="50" value="abc@abc.com" disabled></td>
+        </tr>
+        <tr>
+          <td><label for="home">홈페이지: </label></td>
+          <td><input type="url" id="home" name="homepage" size="50"></td>
+        </tr>
+        <tr>
+          <td><label for="search">검색어: </label></td>
+          <!-- esc 키를 누르면 필드의 값이 모두 삭제된다 -->
+          <td><input type="search" id="search" name="keyword" size="50" value="ABC"></td>
+        </tr>
+        <tr>
+          <td><label for="amount">수량: </label></td>
+          <td>
+            <!-- 
+              숫자만 입력 가능한 필드가 된다 
+              size => 이 필드 크기는 20자가 한번에 다 표시될 만한 크기로 지정
+              max => 필드에 입력할 수 있는 최대 값.
+              min => 필드에 입력할 수 있는 최소 값.
+              step => 필드의 위 화살표를 클릭하면 증감될 값
+              placeholder => 필드에 흐린 텍스트로 미리 보여줄 값. 포커스를 두면 문자는 사라진다
+              value => 사용자의 입력값을 먼저 기술해서 표시해 놓을 목적(전송되는 실질적인 값)
+            -->
+            <input type="number" id="amount" name="amount" size="20"
+              max="100" min="0" value="0.5" step="0.1">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="expense">비용: </label></td>
+          <td>
+            <input type="range" id="expense" name="expense"
+              max="100" min="0" value="100" step="10">
+            <span id="exprensValue"></sp>
+          </td>
+        </tr>
+
+        <tr>
+          <td>좋아하는 스포츠: </td>
+          <td>
+            <!-- 
+              radio button은 같은 name 속성 값을 가진 요소중에서 1개만 선택이 된다
+              사용자는 선택만 한다(값을 입력하지 않는다 => 전송될 값이 없음)
+              따라서 선택만 하는 요소는 반드시 value 속성이 기술되어야 한다
+              checked => 기술된 요소가 기본적으로 선택된 상태가 된다
+            -->
+            <input type="radio" id="one" name="sports" value="soccer">
+            <label for="one">축구</label>
+            <input type="radio" id="two" name="sports" value="baseball" checked>
+            <label for="two">야구</label>
+            <input type="radio" id="three" name="sports" value="basketball">
+            <label for="three">농구</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>좋아하는 과목: </td>
+          <td>
+            <input type="radio" id="one1" name="like" value="HTML" checked>
+            <label for="one1">html</label>
+            <input type="radio" id="two1" name="like" value="CSS">
+            <label for="two1">css</label>
+            <input type="radio" id="three1" name="like" value="JavaScript">
+            <label for="three1">javascript</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>좋아하는 과목 모두 선택: </td>
+          <!-- 
+              checkbox은 name 속성 상관없이 다중 선택이 가능하다. 다만 값은 name에 의해 관리된다
+              language = ['React', 'Angular'];
+              사용자는 선택만 한다(값을 입력하지 않는다 => 전송될 값이 없음)
+              따라서 선택만 하는 요소는 반드시 value 속성이 기술되어야 한다
+              checked => 기술된 요소가 기본적으로 선택된 상태가 된다
+
+              checkbox => 다중 선택
+              radio button => 단일 선택
+            -->
+          <td>
+            <input type="checkbox" id="one2" name="language" value="React" checked>
+            <label for="one2">리엑트</label>
+            <input type="checkbox" id="two2" name="language" value="Vue">
+            <label for="two2">뷰</label>
+            <input type="checkbox" id="three2" name="language" value="Angular">
+            <label for="three2">앵귤러</label>
+            <input type="checkbox" id="four2" name="language" value="jQuery">
+            <label for="four2">제이쿼리</label>
+            <input type="checkbox" id="five2" name="language" value="TypeScript">
+            <label for="five2">타입스크립트</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>단일 선택: </td>
+          <td>
+            <!-- 
+              radio button과 동일하게 항목중 1개만 선택이 가능하다
+              사용자는 선택만 한다(값을 입력하지 않는다 => 전송될 값이 없음)
+              따라서 선택만 하는 요소는 반드시 value 속성이 기술되어야 한다(기술하지 않으면 option의 표시값이 value 값이 된다)
+              selected => 기술된 요소가 기본적으로 선택된 상태가 된다
+
+              size => 높이 값
+              width => CSS로 정의 또는 option 요소의 표시 데이터 값의 넓이
+            -->
+            
+            <select name="single" >
+              <option>----- 선택해 주세요 -----</option>
+              <option>자장면</option>
+              <option>짬뽕</option>
+              <option selected>잡채밥</option>
+              <option>짬짜면</option>
+              <option>탕수육</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>단일 선택 2: </td>
+          <td>
+            <select name="single2" >
+              <option>----- 선택해 주세요 -----</option>
+
+              <optgroup>
+                <option>자장면</option>
+                <option>짬뽕</option>
+                <option selected>잡채밥</option>
+              </optgroup>
+
+              <optgroup>
+                <option>짬짜면</option>
+                <option>탕수육</option>
+              </optgroup>
+              
+            </select>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>다중 선택: </td>
+          <td>
+            <!-- 
+              checkbox와 동일하게 항목중 여러개 선택이 가능하다
+              사용자는 선택만 한다(값을 입력하지 않는다 => 전송될 값이 없음)
+              따라서 선택만 하는 요소는 반드시 value 속성이 기술되어야 한다(기술하지 않으면 option의 표시값이 value 값이 된다)
+              selected => 기술된 요소가 기본적으로 선택된 상태가 된다
+
+              multiple => 다중 선택을 가능하게 해 준다 (이 옵션이 없으면 단일 선택)
+              size => 높이 값
+              width => CSS로 정의 또는 option 요소의 표시 데이터 값의 넓이
+
+              이 구조를 리스트라고도 한다
+            -->
+            
+            <select name="multi" multiple size="7">
+              <option>----- 선택해 주세요 -----</option>
+              <option value="en">영어</option>
+              <option value="ko">한국어</option>
+              <option value="fr" selected>프랑스어</option>
+              <option value="ge">독일어</option>
+              <option value="sp">스페인어</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>자기소개: </td>
+          <td>
+            <!--
+              반드시 종료태그가 존재해야 한다. 기본값(value)은 태그 사이에 위치한다(value 속성 사용 안함)
+
+              cols => 한 줄에 100글자가 다 표시될 만큼의 넓이 값 (input의 size 속성과 동일)
+              rows => 줄 수
+            -->
+            <textarea cols="100" rows="10">여기에 기본 값을 입력한다</textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="regdate">입사일자: </label></td>
+          <td>
+            <input type="date" id="regdate" name="regdate" min="2023-12-01" max="2023-12-31" value="2023-08-01"> ~ 
+            <input type="date" id="regdate" name="regdate" min="2023-12-01" max="2023-12-31" value="2023-12-25">
+          </td>
+        </tr>
+        
+        <tr>
+          <td><label for="upload">파일업로드: </label></td>
+          <td>
+            <input type="file" id="upload" name="upload">
+          </td>
+        </tr>
+
+        <tr>
+          <td>보이지 않는 필드:</td>
+          <td>
+            <!--
+              form을 이용해서 값을 전달할 필요가 있는 경우. 사용자의 입력값이 아닌 어떤 고정값을 전달할 필요가 
+              있는 경우 사용한다.
+            -->
+            <input type="hidden" name="greet" value="Hello World">
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <!-- 이 버튼이 클릭되면 form에 지정한 method 방식으로 action 지정한 페이지로 데이터를 전달 -->
+            <button type="submit">전송</button>
+            <!-- submit 버튼의 역할. 다만 지정한 이미지로 표시한다 -->
+            <input type="image" src="./05/images/login.png">
+
+            <!-- 이 버튼이 클릭되면 모든 요소의 초기값으로 리셋 -->
+            <button type="reset">리셋</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <input type="submit" value="SEND">
+            <input type="reset" value="RESET">
+
+            <input type="button" value="자바스크립트용" onclick="alert('Hello World')">
+            <button type="button" onclick="location.href='http://www.daum.net'">자바스크립트용</button>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+  </form>
+
+  <script>
+    document.querySelector('input[name="expense"]').addEventListener('change', function(evt){
+      const value = document.querySelector('input[name="expense"]').value;
+      document.querySelector('#exprensValue').innerHTML = value;
+    })
+  </script>
+</body>
+</html>

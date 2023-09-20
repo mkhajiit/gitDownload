@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+  <h1>Form</h1>
+
+  <p>
+    그러나 모리도 물러서지 않았다. 4세트를 8이닝만에 15-9로 승리하고 다시 승부를 세트스코어 2-2 원점으로 돌린 뒤 
+    5세트에서도 첫 이닝 하이런 9점을 쓸어담아 일찌감치 격차를 벌려 5이닝만에 15-9로 승리, 세트스코어 3-2로 우승까지 
+    한 세트를 남겨뒀다.
+  </p>
+
+  method => GET / POST / PUT / PATCH / DELETE / HEADER<br>
+  action => 넘긴 값을 처리 할 페이지를 지정. 생략하면 현재페이지가 리로드된다<br>
+
+  autocomplete="off" => 폼 요소에 커서를 위치시킨 경우(focus를 얻음) 이전에 입력한 값을 표시할 것인가를 결정<br>
+  fieldset => 관련 있는 요소를 묶을 목적으로 사용<br>
+
+  <form method="get" action="" autocomplete="off">
+
+    <fieldset>
+      <legend>회원 정보</legend>
+      
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" size="30" placeholder="size는 30글자 입력할 수 있는 크기만큼"><br>
+      Age: <input type="text" name="age" value="사용자가 입력할 값을 미리 입력해 놓고자 하는 경우"><br>
+
+      아이디: <input type="text" name="id" maxlength="10" placeholder="maxlength는 최대 입력 글자 수를 지정"><br>
+      패스워드: <input type="password" name="password"><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>상세 정보</legend>
+      주소: <input type="text" name="address"><br>
+      전번:  <input type="text" name="tel1" value="010"> - 
+            <input type="text" name="tel2" value=""> - 
+            <input type="text" name="tel3"><br>
+      좋아하는 스포츠:
+      <input type="radio" name="sports" value="야구" id="one"><label for="one">야구</label>
+      <input type="radio" name="sports" value="축구" id="two"><label for="two">축구</label>
+      <input type="radio" name="sports" value="농구" id="three"><label for="three">농구</label>
+    </fieldset>
+    
+    <button type="submit">submit</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A09 Text</title>
+    <style type="text/css">
+      body { line-height: 1.5em; font-size: 18px; }
+
+      .one {
+        background: url('./images/07/bg.jpg');
+        color: #00FF00;     /* color: rgb(0, 255, 0); */
+      }
+      .two209 {
+        background: url('./images/07/bg.jpg');
+        color: #FFFFFF7b;   /* color: rgba(255, 255, 255, 0.5); */
+      }
+
+      .three214 {
+        color: gray;
+        width: 500px;
+        text-align: justify;
+        line-height: 1.5em;
+      }
+
+      .four217 {
+        background: black;
+        color: white;
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;   /* 높이값과 동일한 값 */
+      }
+
+      .under217 { text-decoration: underline; }         /* 밑줄 */
+      .through217 { text-decoration: line-through; }    /* 중간선 */
+      .overline217 { text-decoration: overline; }       /* 문자 위에 선 추가 */
+      .none217 { text-decoration: none;}                /* 속성 취소 */
+
+      /* 이텔릭 형태로 표시되는 값을 취소해서 일반 텍스트로 표시 */
+      .style217 { font-style: normal; color: red; }                 /* 속성 취소 */
+
+      /* Hyper text의 링크를 일괄 적용 즉 a 태그에 적용 */
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      a:active { color: orange; }
+      a:visited { color: red; text-decoration: none; }
+
+      /* text-shadow: x축값 y축값 퍼짐정도 색상; */
+      .shadow218 { text-shadow: 5px 5px 5px gray;}
+
+      .upper220 { text-transform: uppercase; }
+      .lower220 { text-transform: lowercase; }
+      .cap220 { text-transform: capitalize; }   /* 단어의 첫 문자만 대문자로 표시한다 */
+      
+      .letter221 { letter-spacing: 0.5em; }
+      .word221 { word-spacing: 1em; }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="shadow218">HTML - Hyper Text Markup Language</h1>
+
+    <p class="one under217">
+      웹사이트의 모습을 기술하기 위한 마크업 언어.
+      프로그래밍 언어가 아니라 마크업 정보를 표현하는 마크업 언어로 문서의 내용 이외의 문서의 구조나 서식 같은 것을 포함한다. 
+      보면 알겠지만 애초에 이름 HTML의 ML이 마크업 언어라는 뜻이다. 웹사이트에서 흔히 볼 수 있는 <a href="https://namu.wiki/w/HTML">htm이나 html</a> 확장자가 바로 이 언어로 작성된 문서다.
+      <br>
+      <br>
+      <div class="upper220">HTML - Hyper Text Markup Language</div>
+      <div class="lower220">HTML - Hyper Text Markup Language</div>
+      <div class="cap220">HTML - hyper text markup language</div>
+    </p>
+
+    <h1 class="letter221">CSS - Cascading Style Sheet</h1>
+
+    <p class="two209">
+      HTML 등의 마크업 언어로 작성된 문서가 실제로 웹사이트에 표현되는 방법을 정해주는 스타일 시트 언어.
+
+      <a href="https://ko.wikipedia.org/wiki/CSS">CSS</a>의 C가 Cascading[1]의 약자인데, 이는 상위 요소의 스타일 속성을 자손 요소들에게 상속시켜주는 모습이 DOM 트리구조에서 마치 폭포수처럼 내려가는 모습을 닮았기 때문이다. 
+      다만 예외로 마진, 패딩, 보더 등의 박스모델 관련 속성은 상속되지 않는다. 물론 inherit 값을 줘서 강제로 상속시킬 순 있다.
+    </p>
+
+    <h1>자바스크립트</h1>
+    <p class="three214">
+      <!-- 링크 hyper text에 있는 기본 속성 underline 속성을 제거  -->
+      <a href="https://ko.wikipedia.org/wiki/javascript" class="none217">자바스크립트(영어: JavaScript)</a>는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용되며, 
+      다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 
+      또한 <span class="under217">Node.js</span>와 같은 런타임 환경과 같이 
+      <span class="through217">서버 프로그래밍</span>에도 사용되고 있다. 
+
+      다른 <span class="overline217">응용 프로그램</span>의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 
+      또한 <span class="black217">Node.js</span>와 같은 런타임 환경과 
+      <br>
+
+      같이 <i class="style217">서버 프로그래밍</i>에도 사용되고 있다.<br>
+      같이 <em  class="style217">서버 프로그래밍</em>에도 사용되고 있다.<br>
+    </p>
+
+    <h1>라이브러리</h1>
+    <p class="word221">
+      라이브러리(영어: library)는 주로 소프트웨어를 개발할 때 컴퓨터 프로그램이 사용하는 비휘발성 자원의 모임이다. 
+      여기에는 구성 데이터, 문서, 도움말 자료, 메시지 틀, 미리 작성된 코드, 서브루틴(함수), 클래스, 값, 자료형 사양을 포함할 수 있다. 
+      OS/360 및 이후 세대에서는 파티션 데이터 세트로 부른다.
+    </p>
+
+    <h1>프레임워크</h1>
+    <p>
+      컴퓨터 프로그래밍에서 <a href="#">소프트웨어</a> 프레임워크(software framework)는 복잡한 문제를 해결하거나 서술하는 데 사용되는 기본 개념 구조이다. 
+      간단히 뼈대, <a href="#">골조(骨組)</a>, 프레임워크(framework)라고도 한다. 
+      이렇게 매우 폭넓은 정의는 이 용어를 버즈워드(buzzword)로서, 특히 소프트웨어 환경에서 사용할 수 있게 만들어 준다.
+    </p>
+  </body>
+</html>

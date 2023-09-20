@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <title>A08 Image</title>
+</head>
+<body>
+  <div class="m-3">
+    <h1>A08 Image</h1>
+
+    <div class="row mb-3">
+      <div class="col-3 bg-primary">
+        <!-- 반응형 - 칸의 크기에 따라 이미지의 크기도 동적으로 변경된다 -->
+        <img src="./images/08/bear.jpg" alt="곰 이미지" class="img-fluid">
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <!-- 테두리가 추가된다 -->
+      <img src="./images/08/bear.jpg" alt="곰 이미지" class="img-thumbnail">
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-6 bg-primary clearfix">
+        <!-- Float를 이용한 위치 -->
+        <img src="./images/08/bear.jpg" alt="곰 이미지" class="img-fluid rounded float-start">
+        <img src="./images/08/bear.jpg" alt="곰 이미지" class="img-fluid rounded float-end">
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <!-- 테두리가 추가된다 -->
+      <img src="./images/08/bear.jpg" alt="곰 이미지" class="img-thumbnail rounded mx-auto d-block">
+    </div>
+
+  </div>
+</body>
+</html>

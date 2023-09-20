@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A25Pseudo.html</title>
+  <style>
+    #content { width: 1000px; margin: 20px auto; }
+    fieldset { border: none; margin: 0; padding: 0; }
+    fieldset > legend { display: none; }
+
+    #myForm { margin-bottom: 30px; }
+
+    #myForm input[type="text"], #myForm input[type="password"] {
+        width: 100%;
+        border: 0;    /* 테두리를 삭제 */
+        border-bottom: 1px solid gray;
+        padding: 5px;
+        outline: 0;   /* 마우스 커서가 위치 했을때(focus)의 border */
+        font-size: 1em;
+        color: orange;
+        margin-bottom: 30px;
+      }
+
+      #myForm button[type="submit"] {
+        border: 1px solid gray;
+        border-radius: 3px;
+        padding: 5px 20px;
+        color: white;
+        background: gray;
+      }
+      #myForm button[type="submit"]:hover {
+        color: orange;
+        background: white;
+      }
+
+      #myForm .sports {
+        margin-bottom: 30px;
+      }
+
+      input:disabled { background: lightgray; }
+      input:checked + label {
+        color: orange;
+      }
+
+      /* 여러 요소 중 span 요소가 딱 1개만 있어야 한다 */
+      div span:only-of-type { color: orange; }
+
+      /* 요소 자체가 span 요소 딱 1개만 있는 경우 */ 
+      div span:only-child { color: green; }
+
+      /* 여러 요소중 span 요소가 어떤 위치든 첫번째로 만나는 요소 모두 적용 */ 
+      div span:first-of-type { font-style: italic; }
+
+      /* 여러 요소중 span 요소가 반드시 첫번째 위치에 있는 요소만 적용 */ 
+      div span:first-child { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h1>Form</h1>
+
+    <form method="get" action="" autocomplete="off" id="myForm">
+      <fieldset>
+        <legend>회원 정보</legend>
+        
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" size="30" placeholder="이름 입력"><br>
+        Age: <input type="text" name="age"><br>
+
+        아이디: <input type="text" name="id" maxlength="10"><br>
+        패스워드: <input type="password" name="password"><br>
+      </fieldset>
+
+      <fieldset class="sports">
+        <legend>상세 정보</legend>
+        좋아하는 스포츠:
+        <input type="radio" name="sports" value="야구" id="one"><label for="one">야구</label>
+        <input type="radio" name="sports" value="축구" id="two"><label for="two">축구</label>
+        <input type="radio" name="sports" value="농구" id="three"><label for="three">농구</label>
+      </fieldset>
+      
+      <button type="submit">전송</button>
+      <button type="reset">리셋</button>
+
+      <button type="button" name="btnOne">Disable</button>
+    </form>
+    
+    <div>
+      <span>ONE</span>
+    </div>
+
+    <div>
+      <span>ONE</span> | 
+      <b>TWO</b> | 
+      <b>THREE</b> |
+    </div>
+
+    <div>
+      <b>TWO</b> | 
+      <span>ONE</span> | 
+      <b>THREE</b> |
+      <span>FOUR</span>
+    </div>
+
+    <div>
+      <span>ONE</span> | 
+      <span>TWO</span> | 
+      <span>THREE</span> |
+      <span>FOUR</span>
+    </div>
+
+    <div>
+      <span>ONE</span> | 
+      <span>TWO</span> | 
+      <span>THREE</span> |
+      <span>FOUR</span>
+    </div>
+  </div>
+  
+  <script>
+    document.querySelector('button[name=btnOne]').addEventListener('click', function(evt){
+      document.querySelector('input[name=password]').setAttribute('disabled', true)
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A22 자식 선택자</title>
+    <style type="text/css">
+			body { color: gray; line-height: 1.3em; }
+			h1, h2, h3, h4, h5, h6 { font-size:1.3em; }
+
+      #content {
+        width: 1000px;
+        margin: 20px auto;
+      }
+      /* 
+        자식 선택자 - 
+        띄어쓰기 위에 지정한 요소가 앞에 지정한 요소의 바로 자식 요소(손자부터는 안됨)
+        이어야지만 적용이 된다 
+      */
+      header > h1 { color: orange; }
+
+      table { width: 100%; border: 1px solid gray; border-collapse: collapse;}
+      table > thead > tr > th { border: 1px solid gray; padding: 7px;}
+      /* td { border: 1px solid gray; padding: 7px;} => 모든 테이블의 td에 적용된다 */
+      .myTable td { border: 1px solid gray; padding: 7px;}
+		</style>
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <h1>회사 로고</h1>
+        <div>
+          <h1>이 헤딩 태그도 색이 변경될까?</h1>
+          화면 표현을 위한 마크업을 만들 필요없이 완벽하게 페이지 레이아웃을 짤 수 있다는 것은 CSS의 가장 큰 장점 중
+          하나입니다. 하지만 CSS로 레이아웃을 만드는 것이 보통 어려운 일이 아니라고 알려져 있습니다. 특히 처음 접한
+          사람들이 이런 얘기를 많이 하게 되죠. 이런 얘기가 나오게 되는 이유는 웹 브라우저마다 다른 특성을 보이기
+          때문이기도 하지만 대부분은 웹 상에서 구할 수 있는 레이아웃 기법이 저마다 다 다른 방식을 취하고 있기
+          때문입니다. 많은 CSS 개발자들이 자신만의 다단 레이아웃 기법을 새롭게 선보이는데, CSS 입문자들이 이런 기법이
+          어떻게 동작하는지 정확하게 이해하지 못하고 사용하는데서 원인을 찾을 수도 있겠습니다. 이렇게 CSS 레이아웃
+          기법에 대해서 블랙박스처럼 사용하게 되면 원하는 결과는 금방 얻을 수 있지만 이 언어를 이해할 수는 없습니다.
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <h1>레이아웃에 대해서</h1>
+          <div>
+            화면 표현을 위한 마크업을 만들 필요없이 완벽하게 페이지 레이아웃을 짤 수 있다는 것은 CSS의 가장 큰 장점 중
+            하나입니다. 하지만 CSS로 레이아웃을 만드는 것이 보통 어려운 일이 아니라고 알려져 있습니다. 특히 처음 접한
+            사람들이 이런 얘기를 많이 하게 되죠. 이런 얘기가 나오게 되는 이유는 웹 브라우저마다 다른 특성을 보이기
+            때문이기도 하지만 대부분은 웹 상에서 구할 수 있는 레이아웃 기법이 저마다 다 다른 방식을 취하고 있기
+            때문입니다. 많은 CSS 개발자들이 자신만의 다단 레이아웃 기법을 새롭게 선보이는데, CSS 입문자들이 이런 기법이
+            어떻게 동작하는지 정확하게 이해하지 못하고 사용하는데서 원인을 찾을 수도 있겠습니다. 이렇게 CSS 레이아웃
+            기법에 대해서 블랙박스처럼 사용하게 되면 원하는 결과는 금방 얻을 수 있지만 이 언어를 이해할 수는 없습니다.
+          </div>
+        </section>
+       
+        <section>
+          <h1>디자인을 가로 중간에 배치하기</h1>
+          <table class="myTable">
+            <thead>
+              <tr>
+                <th>번호</th><th>곡명</th><th>아티스트명</th><th>앨범</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Super Shy</td><td>NewJeans</td><td>NewJeans 'Super Shy'</td>
+              </tr>
+              <tr>
+                <td>2</td><td>퀸카 (Queencard)</td><td>(여자)아이들</td><td>I feel</td>
+              </tr>
+              <tr>
+                <td>3</td><td>I AM</td><td>IVE (아이브)</td><td>I've IVE</td>
+              </tr>
+              <tr>
+                <td>4</td><td>이브, 프시케 그리고 푸른 수염의</td><td>LE SSERAFIM (르세라핌)</td><td>UNFORGIVEN</td>
+              </tr>
+              <tr>
+                <td>5</td><td>Spicy</td><td>aespa</td><td>MY WORLD</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div>
+            중간에 배치되는 디자인이 예쁘기 때문에, 많은 개발자들이 CSS를 처음 배울 때 이 방법을 가장 먼저 알고
+            싶어합니다. 중간에 오도록 하는 디자인을 하는 방법엔 크게 두가지가 있습니다. 하나는 auto 마진을 이용한 방법이고
+            다른 하나는 포지셔닝과 마진에 음수값을 지정하는 방법입니다.
+          </div>
+        </section>
+        
+        <section>
+          <h1>플로트 기반의 레이아웃 만들기</h1>
+          <div>
+            CSS 기반으로 레이아웃을 만드는 데는 절대 위치 지정 방식이나 음수 마진값 사용 방식 등 여러 가지 방법이
+            있습니다. 그 중에서 플로트를 기반으로 한 레이아웃이 가장 쉬운 방식이라 할 수 있습니다. 플로트 기반
+            레이아웃이라는 이름이 말해주듯이 위치를 지정할 엘리먼트의 너비값을 지정하고 플로트로 왼쪽이나 오른쪽으로
+            띄우기만 하면 됩니다.
+          </div>
+
+          <div>
+            엘리먼트에 플로트를 지정하면 기본 문서 흐름내에서 자리를 차지하지 않기 때문에, 해당 엘리먼트를 둘러싸고 있는
+            블록 박스에 아무런 영향을 주지 않게 됩니다. 이 문제를 해결하려면 레이아웃 내의 적절한 위치에서 플로트를
+            해제해야 합니다. 하지만 플로팅과 해제를 계속 반복하기보다는 거의 대부분 요소에 플로트를 지정하고 페이지 푸터
+            같이 문서 내의 한 두 곳에서만 해제하면 되도록 하는 방법을 일반적으로 많이 사용합니다.
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>푸터</p>
+      </footer>
+    </div>
+  </body>
+</html>

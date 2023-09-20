@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <title>A03 Column</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-xl-12 bg-body-secondary">ALL</div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-9" style="background: lightgray;">9칸 점유</div>
+      <div class="col-5" style="background: orange;">5칸 점유</div>
+      <div class="col-7" style="background: lightgreen;">5칸 점유</div>
+    </div>
+
+    <div class="row row-cols-3 mb-3">
+      <!-- row-cols-3에 의해 각 요소의 cols 값이 기본 4가된다 즉 cols-4와 동일 -->
+      <div class="col" style="background: lightgray;">1칸 점유</div>
+      <div class="col" style="background: orange;">1칸 점유</div>
+      <div class="col" style="background: lightgreen;">1칸 점유</div>
+      <div class="col" style="background: lightgray;">1칸 점유</div>
+      <div class="col" style="background: orange;">1칸 점유</div>
+    </div>
+
+    <div class="row row-cols-3 mb-3">
+      <!-- 각 요소에서 지정한 값이 우선한다. 12개에서 남으면 빈칸 유지-->
+      <div class="col" style="background: lightgray;">1칸 점유</div>
+      <div class="col-2" style="background: orange;">1칸 점유</div>
+      <div class="col" style="background: lightgreen;">1칸 점유</div>
+
+      <!-- 위가 총 10칸. 하지만 이칸이 기본 4칸을 점유해야 하므로 위 빈칸에 들어갈 수 없음 => 개행 -->
+      <div class="col" style="background: lightgray;">1칸 점유</div>
+      <div class="col" style="background: orange;">1칸 점유</div>
+    </div>
+
+    <div class="row row-cols-3 mb-3">
+      <!-- 각 요소에서 지정한 값이 우선한다. 12개에서 남으면 빈칸 유지-->
+      <div class="col" style="background: lightgray;">1칸 점유</div>
+      <div class="col-6" style="background: orange;">1칸 점유</div>
+
+      <!-- 위가 총 10칸. 하지만 이칸이 기본 4칸을 점유해야 하므로 위 빈칸에 들어갈 수 없음 => 개행 -->
+      <div class="col" style="background: lightgreen;">1칸 점유</div>
+      <div class="col" style="background: lightgray;">1칸 점유</div>
+      <div class="col" style="background: orange;">1칸 점유</div>
+    </div>
+
+    <!-- 요소에 포함되는 컨텐츠의 넓이값에 따라 요소의 width값을 컨텐츠의 비율을 계산해서 지정 -->
+    <div class="row row-cols-auto mb-3">
+      <div class="col" style="background: lightgray;">a</div>
+      <div class="col" style="background: orange;">aa</div>
+      <div class="col" style="background: lightgreen;">aaa</div>
+      <div class="col" style="background: lightgray;">aaaa</div>
+      <div class="col" style="background: orange;">aaaaa</div>
+      <div class="col" style="background: lightgreen;">aaaaaa</div>
+      <div class="col" style="background: lightgray;">aaaaaaa</div>
+      <div class="col" style="background: orange;">aaaaaaaa</div>
+    </div>
+
+
+  </div>
+</body>
+</html>

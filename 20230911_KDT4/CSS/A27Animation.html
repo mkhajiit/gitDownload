@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A27 Animation</title>
+    <style type="text/css">
+      body { color: gray; line-height: 1.5em; }
+			h1, h2, h3, h4, h5, h6 { font-size:1.5em; }
+      #content { width: 1000px; margin: 20px auto;}
+
+      .box { position: relative; width: 70px; height: 70px; background: orange; text-align: center; line-height: 4.5em; float: left; margin: 0 30px 30px 0; }
+      .clear { clear: both; }
+
+      @keyframes one {
+        from { border: 1px solid transparent; }
+        50% { border: 5px solid gray; border-radius: 50%; background: blue; color: white;}
+        to { border: 1px solid transparent; }
+      }
+      .one { animation-name: one; animation-duration: 2s; }
+
+      @keyframes two {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(270deg); }
+      }
+      .two { animation-name: two; animation-duration: 2s; animation-iteration-count: infinite;}
+
+      @keyframes three {
+        from { top: 0; opacity: 1; }
+        to { top: 300px; opacity: 0;  }
+      }
+      /* name | duration | timing-function | delay | count | direction */
+      .three { animation: three 2s ease-in 0.5s 2 alternate; opacity: 1;}
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <h1>회사 로고</h1>
+      </header>
+
+      <main>
+        <section>
+          <h1>Animation</h1>
+
+          <div class="box one">ONE</div>
+          <div class="box two">TWO</div>
+          <div class="box three">THREE</div>
+          <div class="box">FOUR</div>
+          <div class="box">FIVE</div>
+        </section>
+        
+      </main>
+
+      <footer class="clear">
+        <p>푸터</p>
+      </footer>
+    </div>
+  </body>
+</html>

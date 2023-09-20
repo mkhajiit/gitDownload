@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+html { color: gray; line-height: 1.5em; font-size: 18px;}
+/* 부모 속성과 중복된 값이 있는 경우는 자신 속성을 우선 사용 없으면 부모 속성을 물려 받아 적용 */
+body { color: black; }
+/*
+  그룹 선택자
+  태그 셀렉터(선택자), 아이디 셀렉터, 클래스 셀렉터 모두 ,(콤마)로 구분해서 일괄 적용 가능
+*/
+h1, h2, h3, h4, h5, h6, .size24 { font-size: 24px; }
+/* 
+  이미 정의된 선택자의 속성을 변경 또는 추가하고자 하는 경우
+  선언한 아래에 재 정의해서 덮어쓴다
+*/
+h3 { color: orange !important; }
+.green { color: green; };

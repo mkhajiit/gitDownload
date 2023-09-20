@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A10 Table 칸 합치기</title>
+</head>
+<body>
+  <h1>A10 Table 칸 합치기</h1>
+
+  <table style="width: 800px;" border="1">
+    <tbody>
+      <tr>
+        <td>A</td>
+        <td colspan="2">B</td>
+        <td colspan="2">C</td>
+      </tr>
+      <tr>
+        <td colspan="3">D</td>
+        <td>E</td>
+        <td>E</td>
+      </tr>
+      <tr>
+        <td>G</td>
+        <td>H</td>
+        <td>I</td>
+        <td colspan="2">E</td>
+      </tr>
+      <tr>
+        <td colspan="2">K</td>
+        <td colspan="3">L</td>
+      </tr>
+      <tr>
+        <td>MMM</td>
+        <td>N</td>
+        <td colspan="2">O</td>
+        <td>R</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+
+  <table style="width: 800px" border="1">
+    <caption>가로 세로 합치기</caption>
+    
+    <tbody>
+      <tr>
+        <td rowspan="3"></td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+      </tr>
+      <tr>
+        <td colspan="2">E</td>
+        <td rowspan="2">G</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>H</td>
+      </tr>
+      <tr>
+        <td rowspan="2">I</td>
+        <td>K</td>
+        <td colspan="2" rowspan="2">J</td>
+      </tr>
+      <tr>
+        <td>L</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+
+  <table width="800px" border="1">
+    <caption>표에 대한 머릿말</caption>
+    <colgroup>
+      <col style="width: 10%; background: orange;">
+      <col style="width: 20%;">
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <!-- 동일한 비율 값을 지정하면 동일한 넓이로 잡는다 -->
+        <!--
+        <th style="width: 1px;">1</th>
+        <td style="width: 1px;">놀부</td>
+        <td style="width: 1px;">전주</td>
+
+        <th style="width: 1px;">1</th>
+        <td style="width: 2px;">놀부</td>
+        <td style="width: 3px;">전주</td>
+
+        <th style="width: 10%;">1</th>
+        <td style="width: 30%;">놀부</td>
+        <td>남는 넓이 값은 모두 여기에 할당된다</td>
+
+        <th style="width: 150px;">1</th>
+        <td style="width: 200px;">놀부</td>
+        <td>남는 넓이 값은 모두 여기에 할당된다</td>
+        -->
+
+        <th>1</th>
+        <td>놀부</td>
+        <td>서울</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>흥부</td>
+        <td>전주</td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td>홍길동</td>
+        <td><br></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      
+    </tfoot>
+  </table>
+</body>
+</html>

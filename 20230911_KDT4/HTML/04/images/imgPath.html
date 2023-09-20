@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 SRC 이해하기</title>
+</head>
+<body>
+  <h1>상대패스와 절대패스</h1>
+
+  <p>
+    04폴더의 top.jpg를 상대 / 절대 패스로 표시한다
+    05 폴더의 images의 login.png 파일을 상대 / 절대 패스로 표시한다
+  </p>
+
+  <p>
+    <img src="./top.jpg" alt="top 이미지">
+    <img src="http://127.0.0.1:5500/HTML/04/images/top.jpg" alt="절대패스로 설정">
+    <img src="/HTML/04/images/top.jpg" alt="절대패스로 설정">
+  </p>
+
+  <p>
+    현재 파일이 위치한 폴더는 works(http://127.0.0.1:5500) 폴더에 
+    04 폴더 내부의 images 폴더에 위치판 imgPath.html 파일이다<br>
+    파일이 서버에서 실행되는 경우 최초 패스가 /로 시작되면 /는 서버 Root인
+    works(http://127.0.0.1:5500) 폴더를 의미한다 (사용 주의)<br>
+
+    <img src="./../../05/images/login.png" alt="상패패스">
+    <img src="http://127.0.0.1:5500/HTML/05/images/login.png" alt="절대패스로 설정">
+    <img src="/HTML/05/images/login.png" alt="절대패스로 설정">
+  </p>
+</body>
+</html>

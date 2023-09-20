@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A25 가상 선택자</title>
+    <style type="text/css">
+			body { color: gray; line-height: 1.3em; }
+			h1, h2, h3, h4, h5, h6 { font-size:1.3em; }
+      #content { width: 1000px; margin: 20px auto;}
+
+      table { width: 100%; border: 1px solid; border-collapse: collapse; border-spacing: 1em; margin: 0 auto; }
+      table caption { caption-side: bottom; font-size: 0.8em; font-weight: bold; text-align: right; }
+      table th { border: 1px solid gray; padding: 5px;}
+      table td { border: 1px solid gray; padding: 5px;}
+
+      /* 가상 컨텐츠 ::after, ::before */
+      ul { list-style: none; padding: 0; }
+      ul::after {content: ''; display: block; clear: both;}
+      ul li { float: left; width: 200px; }
+
+      /* link 관련 가상 선택자 */
+      a:link { 
+        color: gray; 
+        text-decoration: none; 
+        font-weight: bold; 
+        padding: 10px 20px;
+      }
+      a:visited { color: #f00;} /* F00 => FF 00 00 두자리가 값이 같은 경우 한자리만 기술 가능 */
+      a:hover { background: black; color: white;}
+      a:active { background: red; color: white;}
+      
+      #google:target {
+        border: 5px solid orange;
+        background: gray;
+        padding: 10;
+        color:white;
+      }
+
+      .one thead tr:first-child { background: lightgray; color: white; }
+      .one thead tr th { border-right: 1px solid white; }
+      .one thead tr th:last-child { border-right: 1px solid lightgray; }
+
+      /* 두번째 줄만 선택된다 */
+      /* .one tbody tr:nth-child(2) { background: orange; } */
+
+      /* 두번째 줄 마다 선택. 줄의 number / 2 == 0 만족하는 줄만 적용됨 */
+      /* .one tbody tr:nth-child(2n) { background: orange; } */
+
+      /* 위와 동일하지만 나머지가 1인 요소만 선택된다. 이 식으로 첫째줄을 선택 가능하게 한다 - 첫줄부터 시작 */
+      .one tbody tr:nth-child(2n+1) { background: orange; }
+
+
+      .two thead tr:first-child { background: lightgray; color: white; }
+      .two thead tr th { border-right: 1px solid white; }
+      .two thead tr th:last-child { border-right: 1px solid lightgray; }
+
+      .two tbody tr td:first-child { 
+        background: lightgray; 
+        color: white;
+        text-align: center;
+      }
+      /* .two tbody td:nth-child(2n) { background: orange; } */
+
+      /* odd => 홀수, even => 짝수 */
+      .two tbody td:nth-child(even) { background: orange; }
+
+      header > h1::after {
+        content: "NEW!!";
+        font-size: 10pt;
+        background: red;
+        color: white;
+        padding: 5px;
+        display: inline-block;
+        height: 10px;
+        line-height: 10px;
+        position: relative;
+        top: -10px;
+      }
+
+		</style>
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <h1>회사 로고</h1>
+      </header>
+
+      <main>
+        <section>
+          <h1>가상 요소</h1>
+          <table class="one">
+            <caption>가장 즐겨듣는 7곡 목록</caption>
+            <thead>
+              <tr>
+                <th>번호</th><th>곡명</th><th>아티스트명</th><th>앨범</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Super Shy</td><td>NewJeans</td><td>NewJeans 'Super Shy'</td>
+              </tr>
+              <tr>
+                <td>2</td><td>퀸카 (Queencard)</td><td>(여자)아이들</td><td>I feel</td>
+              </tr>
+              <tr>
+                <td>3</td><td>I AM</td><td>IVE (아이브)</td><td>I've IVE</td>
+              </tr>
+              <tr>
+                <td>4</td><td>이브, 프시케 그리고 푸른 수염의</td><td>LE SSERAFIM (르세라핌)</td><td>UNFORGIVEN</td>
+              </tr>
+              <tr>
+                <td>5</td><td>Spicy</td><td>aespa</td><td>MY WORLD</td>
+              </tr>
+              <tr>
+                <td>6</td><td>헤어지자 말해요</td><td>박재정</td><td>1집 Alone</td>
+              </tr>
+              <tr>
+                <td>7</td><td>UNFORGIVEN (feat. Nile Rodgers)</td><td>LE SSERAFIM (르세라핌)</td><td>UNFORGIVEN</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+       
+        <section>
+          <h1>가상 요소</h1>
+          <table class="two">
+            <caption>가장 즐겨듣는 7곡 목록</caption>
+            <thead>
+              <tr>
+                <th>번호</th><th>곡명</th><th>아티스트명</th><th>앨범</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Super Shy</td><td>NewJeans</td><td>NewJeans 'Super Shy'</td>
+              </tr>
+              <tr>
+                <td>2</td><td>퀸카 (Queencard)</td><td>(여자)아이들</td><td>I feel</td>
+              </tr>
+              <tr>
+                <td>3</td><td>I AM</td><td>IVE (아이브)</td><td>I've IVE</td>
+              </tr>
+              <tr>
+                <td>4</td><td>이브, 프시케 그리고 푸른 수염의</td><td>LE SSERAFIM (르세라핌)</td><td>UNFORGIVEN</td>
+              </tr>
+              <tr>
+                <td>5</td><td>Spicy</td><td>aespa</td><td>MY WORLD</td>
+              </tr>
+              <tr>
+                <td>6</td><td>헤어지자 말해요</td><td>박재정</td><td>1집 Alone</td>
+              </tr>
+              <tr>
+                <td>7</td><td>UNFORGIVEN (feat. Nile Rodgers)</td><td>LE SSERAFIM (르세라핌)</td><td>UNFORGIVEN</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h1>링크</h1>
+          <nav>
+            <ul>
+              <!-- CSS의 #google:target의 속성을 변경할 링크 - 버튼도 가능 -->
+              <li><a href="#google">GOOGLE</a></li>
+              <li><a href="http://www.daum.net">DAUM</a></li>
+              <li><a href="#">NAVER</a></li>
+              <li><a href="#">MSN</a></li>
+            </ul>
+          </nav>
+        </section>
+
+        <section>
+          <h1>플로트 기반의 레이아웃 만들기</h1>
+          <div id="google">
+            CSS 기반으로 레이아웃을 만드는 데는 절대 위치 지정 방식이나 음수 마진값 사용 방식 등 여러 가지 방법이
+            있습니다. 그 중에서 플로트를 기반으로 한 레이아웃이 가장 쉬운 방식이라 할 수 있습니다. 플로트 기반
+            레이아웃이라는 이름이 말해주듯이 위치를 지정할 엘리먼트의 너비값을 지정하고 플로트로 왼쪽이나 오른쪽으로
+            띄우기만 하면 됩니다.
+          </div>
+
+          <div>
+            엘리먼트에 플로트를 지정하면 기본 문서 흐름내에서 자리를 차지하지 않기 때문에, 해당 엘리먼트를 둘러싸고 있는
+            블록 박스에 아무런 영향을 주지 않게 됩니다. 이 문제를 해결하려면 레이아웃 내의 적절한 위치에서 플로트를
+            해제해야 합니다. 하지만 플로팅과 해제를 계속 반복하기보다는 거의 대부분 요소에 플로트를 지정하고 페이지 푸터
+            같이 문서 내의 한 두 곳에서만 해제하면 되도록 하는 방법을 일반적으로 많이 사용합니다.
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>푸터</p>
+      </footer>
+    </div>
+  </body>
+</html>

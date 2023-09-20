@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A19 Background</title>
+    <style type="text/css">
+      body { color: gray; line-height: 1.5em; }
+			h1, h2, h3, h4, h5, h6 { font-size:1.5em; }
+
+      body {
+        /*
+        background-color: lightgray;
+        background-image: url('./images/09/bg1.jpg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-attachment: scroll;
+        */
+        background: lightgray url('./images/09/bg1.jpg') no-repeat 50% 50% fixed;
+        background-size: cover;     /* 브라우저 넓이에 맞게 증감 */
+      }
+      .one {
+        color: white;
+        background-color: black;
+        border: 10px solid orange;
+        padding: 10px;
+        background-clip: padding-box;
+      }
+      .two {
+        background: white url('./images/09/bg3.png') no-repeat right top;
+        padding: 20px;
+        border: 10px solid orange;
+        background-origin: content-box;
+      }
+
+      .three ul {
+        list-style: none;
+        padding: 0;
+        background-color: white;
+      }
+      .three ul li {
+        background: url('./images/09/book-icon.png') no-repeat;
+        padding-left: 50px;  /* 안쪽에 이미지를 위치시키기 위해 우측으로 이동 */
+        margin-left: 10px;   /* 왼쪽 간격 10px 띄우기 */
+        line-height: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <header>
+        <h1>회사 로고</h1>
+      </article>
+
+      <main>
+        <section>
+          <h1>레이아웃에 대해서</h1>
+          <div class="one">
+            화면 표현을 위한 마크업을 만들 필요없이 완벽하게 페이지 레이아웃을 짤 수 있다는 것은 CSS의 가장 큰 장점 중
+            하나입니다. 하지만 CSS로 레이아웃을 만드는 것이 보통 어려운 일이 아니라고 알려져 있습니다. 특히 처음 접한
+            사람들이 이런 얘기를 많이 하게 되죠. 이런 얘기가 나오게 되는 이유는 웹 브라우저마다 다른 특성을 보이기
+            때문이기도 하지만 대부분은 웹 상에서 구할 수 있는 레이아웃 기법이 저마다 다 다른 방식을 취하고 있기
+            때문입니다. 많은 CSS 개발자들이 자신만의 다단 레이아웃 기법을 새롭게 선보이는데, CSS 입문자들이 이런 기법이
+            어떻게 동작하는지 정확하게 이해하지 못하고 사용하는데서 원인을 찾을 수도 있겠습니다. 이렇게 CSS 레이아웃
+            기법에 대해서 블랙박스처럼 사용하게 되면 원하는 결과는 금방 얻을 수 있지만 이 언어를 이해할 수는 없습니다.
+          </div>
+        </section>
+       
+        <section>
+          <h1>디자인을 가로 중간에 배치하기</h1>
+          <div class="two">
+            한 줄이 길게 표시되는 텍스트는 읽기가 어렵고 때론 짜증나는 일입니다. 큰 모니터의 보급이 높아지면서 화면
+            가독성이 중요하다는 인식도 높아지고 있습니다. 내용이 화면 중앙에 오도록 하는 디자인은 이런 문제를 해결할 수
+            있는 방법 중의 하나겠죠. 화면 가로폭 전체에 표시되도록 하지 않고 짧게 줄인 내용을 가운데로 배치하면 한줄
+            한줄을 쉽게 읽을 수 있습니다.
+            <br>
+            중간에 배치되는 디자인이 예쁘기 때문에, 많은 개발자들이 CSS를 처음 배울 때 이 방법을 가장 먼저 알고
+            싶어합니다. 중간에 오도록 하는 디자인을 하는 방법엔 크게 두가지가 있습니다. 하나는 auto 마진을 이용한 방법이고
+            다른 하나는 포지셔닝과 마진에 음수값을 지정하는 방법입니다.
+            <br>
+            중간에 배치되는 디자인이 예쁘기 때문에, 많은 개발자들이 CSS를 처음 배울 때 이 방법을 가장 먼저 알고
+            싶어합니다. 중간에 오도록 하는 디자인을 하는 방법엔 크게 두가지가 있습니다. 하나는 auto 마진을 이용한 방법이고
+            다른 하나는 포지셔닝과 마진에 음수값을 지정하는 방법입니다.
+          </div>
+        </section>
+        
+        <section class="three">
+          <h1>플로트 기반의 레이아웃 만들기</h1>
+          <div>
+            <ul>
+              <li>list 01</li>
+              <li>list 01</li>
+              <li>list 01</li>
+              <li>list 01</li>
+              <li>list 01</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>푸터</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+/* page 175의 내부 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  color: gray;
+}
+
+p {
+  color: gray;
+}
